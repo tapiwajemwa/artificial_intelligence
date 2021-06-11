@@ -2,7 +2,7 @@ import flask
 import joblib
 import pandas as pd
 
-xgbmodel = joblib.load('finalized_model.sav')
+xgbmodel = joblib.load('model/finalized_model.sav')
 
 app = flask.Flask(__name__, template_folder='templates')
 

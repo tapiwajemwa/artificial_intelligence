@@ -32,12 +32,15 @@ def main():
        'PaperlessBilling', 'PaymentMethod', 'MonthlyCharges'])
 
         prediction = model.predict(input_variables)
+        prob = model.predict_proba(input_variables)[0]
+        factor = prob[0] *100
+        confidence_factor = str(round(factor, 1)) +'%'
         if prediction == 0:
             result = 'YES'
         else:
             result = 'NO'
 
-        return render_template('main.html',result=result)
+        return render_template('main.html',result=result,confidence_factor=confidence_factor)
 
     if __name__ == '__main__':
         app.run(debug=True)

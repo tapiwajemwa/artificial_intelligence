@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        form {
+            margin: auto;
+            width: 35%;
+        }
+        .result {
+            margin: auto;
+            width: 35%;
+            border: 1px solid #ccc;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Churn Predictor</title>
+</head>
+<body>
+    <form action="{{ url_for('main') }}" method="POST">
+        <fieldset>
+            <legend>Input values</legend>
+            Senior Citizen:
+            <input name="SeniorCitizen" type="number" placeholder="(0: No,  1: Yes)" required><br>
+            Partner:
+            <input name="Partner" type="number" placeholder="(0: No,  1: Yes)" required><br>
+            Dependants:
+            <input name="Dependants" type="number" placeholder="(0: No,  1: Yes)" required><br>
+            Tenure:
+            <input name="Tenure" type="number" placeholder="(Period in Months)" required><br>
+            Online Security:
+            <input name="OnlineSecurity" type="number" placeholder="(0: No,  1: Yes)" required><br>
+            Online Backup:
+            <input name="OnlineBackup" type="number" placeholder="(0: No,  1: Yes)" required><br>
+            Device Protection:
+            <input name="DeviceProtection" type="number" placeholder="(0: No,  1: Yes)" required><br>
+            Tech Support:
+            <input name="TechSupport" type="number" placeholder="(0: No,  1: Yes)" required><br>
+            Contract:
+            <input name="Contract" type="number" placeholder="(0: No,  1: Yes)" required><br>
+            Paperless Billing:
+            <input name="PaperlessBilling" type="number" placeholder="(0: No,  1: Yes)" required><br>
+            Payment Method:
+            <input name="PaymentMethod" type="number" placeholder="([0]Electronic check, [1]Mailed Check, [2]BankTransfer)"}" required><br>
+            Monthly Charges:
+            <input name="MonthlyCharges" type="number" placeholder="(Value in $)" required><br>
+            <br>
+            <input type="submit" name="" id="">
+        </fieldset>
+<br><br>
+    <div class='result' align='center'>
+        <br>Customer churn prediction:
+        <p style="font-size: 50px">{{ result }}
+    </div> 
+    </form>
+            <br>
+            </p>
+</body>
+</html>
